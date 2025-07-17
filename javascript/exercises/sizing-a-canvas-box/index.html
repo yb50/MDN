@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="200"></canvas>
+  <p></p>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const para = document.querySelector("p");
+    const ctx = canvas.getContext("2d");
+    
+    // Edit the following two lines ONLY
+    let x = 210 / 2 - 5;  // x = 43 + 7; // x = 50; 
+    let y = x * 2;        // y = 25 * 3; // y = 50;
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "green";
+    ctx.fillRect(10, 10, x, y);
+    para.textContent = `The rectangle is ${x}px wide and ${y}px high.`;
+  </script>
+</body>
+</html>
