@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+  .output {
+  min-height: 100px;
+  }
+  </style>
+</head>
+<body>
+  <h2>Live output</h2>
+  
+  <div class="output">
+    <ul></ul>
+  
+    <p></p>
+  </div>
+
+  <script>
+    const list = document.querySelector(".output ul");
+    const totalBox = document.querySelector(".output p");
+    let total = 0;
+    list.textContent = "";
+    totalBox.textContent = "";
+
+    const products = [
+      "Underpants:6.99",
+      "Socks:5.99",
+      "T-shirt:14.99",
+      "Trousers:31.99",
+      "Shoes:23.99",
+    ];
+
+    for (const product of products) {
+      const subArray = product.split(":");
+      const name = subArray[0];
+      const price = Number(subArray[1]);
+      total += price;
+      const itemText = `${name} — $${price}`;
+
+      const listItem = document.createElement("li");
+      listItem.textContent = itemText;
+      list.appendChild(listItem);
+    }
+
+    totalBox.textContent = `Total: $${total.toFixed(2)}`;
+  </script>
+</body>
+</html>
